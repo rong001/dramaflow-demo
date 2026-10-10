@@ -401,7 +401,7 @@ function pagePipeline(r) {
       <div class="pl-title"><h2>${esc(s.title)}</h2><div class="spacer"></div><div class="acts">${stepActions(s, c)}</div></div><p class="muted">${esc(s.desc)}</p>${drivers(s, c)}</header>
     <div class="pl-body">${body}</div></section>`;
   return C.shell(r, `<a href="#/pipeline">生产流水线</a><span class="sep">/</span><b>${esc(s.title)}</b>`, `<div class="pl">${railHtml}${panel}</div>`,
-    { actions: `<button class="btn" data-act="goto" data-v="#/new">新建项目</button><button class="btn" data-act="pl-auto" ${ui.auto ? 'disabled' : ''}>${ui.auto ? '自动运行中…' : '一键跑完（演示）'}</button>` });
+    { actions: `<button class="btn" data-act="goto" data-v="#/new">新建项目</button><button class="btn keep" data-act="pl-auto" ${ui.auto ? 'disabled' : ''}>${ui.auto ? '自动运行中…' : '一键跑完（演示）'}</button>` });
 }
 function pagePanorama(r) {
   return C.shell(r, '<b>系统全景</b>', `<div class="pano"><iframe src="panorama.html" title="短剧专家 Skill 体系 · 系统全景"></iframe></div>`, { actions: `<a class="btn" href="panorama.html" target="_blank" rel="noopener">新窗口打开</a>` });

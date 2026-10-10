@@ -181,7 +181,7 @@ function download(name, obj) {
 function toast(msg) {
   let box = document.querySelector('.toasts');
   if (!box) { box = document.createElement('div'); box.className = 'toasts'; box.setAttribute('role', 'status'); document.body.appendChild(box); }
-  const t = document.createElement('div'); t.className = 'toast'; t.innerHTML = ICON.check + '<span></span>'; t.lastChild.textContent = msg; box.appendChild(t);
+  const t = document.createElement('div'); t.className = 'toast'; t.innerHTML = ICON.check + '<span></span>'; t.lastChild.textContent = msg; box.appendChild(t); while (box.children.length > 3) box.firstChild.remove();
   setTimeout(() => t.remove(), 2600);
 }
 
